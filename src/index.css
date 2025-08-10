@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Spillmate Mental Health Support - Calming & Accessible Design System
+All colors MUST be HSL - optimized for mental wellness and accessibility
+*/
+
+@layer base {
+  :root {
+    /* Core background and text */
+    --background: 210 20% 98%;
+    --foreground: 210 15% 20%;
+
+    /* Card surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 210 15% 20%;
+
+    /* Popover surfaces */
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 15% 20%;
+
+    /* Primary - Calming blue for trust and stability */
+    --primary: 210 100% 70%;
+    --primary-foreground: 0 0% 100%;
+    --primary-muted: 210 60% 85%;
+
+    /* Secondary - Soft green for growth and healing */
+    --secondary: 150 40% 85%;
+    --secondary-foreground: 150 80% 25%;
+
+    /* Accent - Gentle purple for empathy and support */
+    --accent: 270 40% 85%;
+    --accent-foreground: 270 60% 30%;
+
+    /* Therapeutic green variant */
+    --therapeutic: 150 60% 75%;
+    --therapeutic-foreground: 150 80% 25%;
+
+    /* Wellness purple variant */
+    --wellness: 270 50% 80%;
+    --wellness-foreground: 270 70% 30%;
+
+    /* Muted tones for calm backgrounds */
+    --muted: 210 30% 95%;
+    --muted-foreground: 210 25% 45%;
+
+    /* Destructive - Soft red for alerts */
+    --destructive: 0 65% 75%;
+    --destructive-foreground: 0 80% 25%;
+
+    /* Borders and inputs */
+    --border: 210 25% 88%;
+    --input: 210 25% 92%;
+    --ring: 210 100% 70%;
+
+    /* Shadows for depth */
+    --shadow-soft: 210 15% 85%;
+    --shadow-medium: 210 20% 75%;
+
+    /* Gradients for beautiful backgrounds */
+    --gradient-hero: linear-gradient(135deg, hsl(210 100% 85%), hsl(270 60% 90%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 30% 98%));
+    --gradient-wellness: linear-gradient(135deg, hsl(150 50% 85%), hsl(210 60% 88%));
+
+    /* Border radius for soft, welcoming design */
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 15% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 15% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 15% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 100% 75%;
+    --primary-foreground: 220 15% 8%;
+    --primary-muted: 210 60% 25%;
+
+    --secondary: 150 30% 20%;
+    --secondary-foreground: 150 40% 85%;
+
+    --accent: 270 30% 20%;
+    --accent-foreground: 270 40% 85%;
+
+    --therapeutic: 150 40% 25%;
+    --therapeutic-foreground: 150 60% 85%;
+
+    --wellness: 270 40% 25%;
+    --wellness-foreground: 270 50% 85%;
+
+    --muted: 220 15% 15%;
+    --muted-foreground: 210 25% 65%;
+
+    --destructive: 0 50% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 18%;
+    --ring: 210 100% 75%;
+
+    --shadow-soft: 220 25% 5%;
+    --shadow-medium: 220 30% 3%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(220 30% 15%), hsl(270 40% 20%));
+    --gradient-card: linear-gradient(180deg, hsl(220 15% 12%), hsl(220 15% 8%));
+    --gradient-wellness: linear-gradient(135deg, hsl(150 30% 15%), hsl(220 25% 12%));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter transition-smooth;
+  }
+
+  /* Custom utility classes for Spillmate */
+  .shadow-soft {
+    box-shadow: 0 4px 20px -4px hsl(var(--shadow-soft));
+  }
+
+  .shadow-medium {
+    box-shadow: 0 8px 30px -8px hsl(var(--shadow-medium));
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .bg-gradient-wellness {
+    background: var(--gradient-wellness);
+  }
+
+  /* Navbar animations */
+  .navbar-slide-down {
+    animation: slideDown 0.3s ease-out;
+  }
+
+  .navbar-item-fade {
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeInUp 0.4s ease-out forwards;
+  }
+
+  .navbar-item-fade:nth-child(1) { animation-delay: 0.1s; }
+  .navbar-item-fade:nth-child(2) { animation-delay: 0.15s; }
+  .navbar-item-fade:nth-child(3) { animation-delay: 0.2s; }
+  .navbar-item-fade:nth-child(4) { animation-delay: 0.25s; }
+  .navbar-item-fade:nth-child(5) { animation-delay: 0.3s; }
+  .navbar-item-fade:nth-child(6) { animation-delay: 0.35s; }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Hover glow effect */
+  .hover-glow {
+    transition: all 0.3s ease;
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+    transform: translateY(-1px);
+  }
+
+  /* Theme transition */
+  * {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Accessibility helpers */
+  .focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2;
+  }
+
+  /* Smooth transitions for accessibility */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
